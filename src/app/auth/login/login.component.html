@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-lg-2">
+        </div> -->
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="card signin">
+                <div class="card-body">
+                    <form class="form" [formGroup]="signinForm">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" formControlName="email">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+                                Email is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+                                Enter a valid email address
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" formControlName="password">
+                            <!-- <textarea class="form-control" formControlName="message" rows="4" cols="50" placeholder="Write your Message here...">
+                              </textarea> -->
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                                Password is must required
+                            </span>
+                            <!-- <span class="text-danger"
+                                *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.minLength">
+                                password must be more than 3 character
+                            </span> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex flex-column bd-highlight mb-3 text-center">
+                                <div class="text-center">
+                                    <button class="btn btn-dark w-50" (click)="onSubmit()">Sign In</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4" id="first">
+            <img src="../../assets/img/login.png" class="w-100 mt-4" alt="">
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>

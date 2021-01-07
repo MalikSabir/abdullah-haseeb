@@ -1,0 +1,198 @@
+<div class="container">
+<div class="row">
+
+<div class="col-md-12 mb-5">
+	<div class="card card-custom gutter-b example example-compact">
+		<div class="card-header">
+			<h3 class="card-title">Add New Product</h3>
+		</div>
+		<form [formGroup]="addProduct" (submit)="addProductData()">
+			<div class="card-body">
+				<div class="form-group mb-8">
+					<div class="alert alert-custom alert-default" role="alert">
+						<div class="alert-icon">
+							<span class="svg-icon svg-icon-primary svg-icon-xl">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+									width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<rect x="0" y="0" width="24" height="24" />
+										<path
+											d="M7.07744993,12.3040451 C7.72444571,13.0716094 8.54044565,13.6920474 9.46808594,14.1079953 L5,23 L4.5,18 L7.07744993,12.3040451 Z M14.5865511,14.2597864 C15.5319561,13.9019016 16.375416,13.3366121 17.0614026,12.6194459 L19.5,18 L19,23 L14.5865511,14.2597864 Z M12,3.55271368e-14 C12.8284271,3.53749572e-14 13.5,0.671572875 13.5,1.5 L13.5,4 L10.5,4 L10.5,1.5 C10.5,0.671572875 11.1715729,3.56793164e-14 12,3.55271368e-14 Z"
+											fill="#000000" opacity="0.3" />
+										<path
+											d="M12,10 C13.1045695,10 14,9.1045695 14,8 C14,6.8954305 13.1045695,6 12,6 C10.8954305,6 10,6.8954305 10,8 C10,9.1045695 10.8954305,10 12,10 Z M12,13 C9.23857625,13 7,10.7614237 7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 C17,10.7614237 14.7614237,13 12,13 Z"
+											fill="#000000" fill-rule="nonzero" />
+									</g>
+								</svg>
+							</span>
+						</div>
+						<div class="alert-text">Welcome here you can add your new product which will show on your
+							profile.</div>
+					</div>
+				</div>
+
+
+                <div class="d-flex flex-row">
+					<div class="p-2 w-50">
+						<div class="form-group">
+							<label>Product Name
+								<span class="text-danger">*</span></label>
+							<input type="text" class="form-control" placeholder="Brand Name of product" formControlName="name"
+								minlength="3" />
+							<span class="text-danger"
+								*ngIf="(addFormControl.name.touched || submitted) && addFormControl.name.errors?.required">
+								Product Name is Required
+							</span>
+							<span class="text-danger"
+								*ngIf="addFormControl.name.touched && addFormControl.name.errors?.minlength">
+								Product Name must be more then 3 character
+							</span>
+						</div>
+					</div>
+
+					<div class="p-2 w-50">
+						<div class="form-group">
+							<label>Brand Name
+								<span class="text-danger">*</span></label>
+							<input type="text" class="form-control" placeholder="Brand Name of product" formControlName="brand_name"
+								minlength="3" />
+							<span class="text-danger"
+								*ngIf="(addFormControl.brand_name.touched || submitted) && addFormControl.brand_name.errors?.required">
+								Brand Name is Required
+							</span>
+							<span class="text-danger"
+								*ngIf="addFormControl.brand_name.touched && addFormControl.brand_name.errors?.minlength">
+								Brand Name must be more then 3 character
+							</span>
+						</div>
+					</div>
+                </div>
+
+
+
+
+
+
+
+                <div class="d-flex flex-row">
+					<div class="p-2 w-50">
+						<div class="form-group">
+							<label for="exampleSelect1">Select Company
+								<span class="text-danger">*</span></label>
+							<select class="form-control" formControlName="company">
+                                <option value="Adbullah Haseeb">Adbullah Haseeb</option>
+                                <option value="Elma">Elma</option>
+							</select>
+							<span class="text-danger"
+								*ngIf="(addFormControl.company.touched || submitted) && addFormControl.company.errors?.required">
+								Company is required
+							</span>
+						</div>
+					</div>
+
+					<div class="p-2 w-50">
+						<div class="form-group">
+							<label for="exampleSelect1">Select Category
+								<span class="text-danger">*</span></label>
+							<select class="form-control" id="exampleSelect1" formControlName="category">
+								<option value="Fertilizer">Fertilizer</option>
+								<option value="Fungicide">Fungicide</option>
+								<option value="Granules">Granules</option>
+								<option value="Herbicide">Herbicide</option>
+								<option value="Insecticide">Insecticide</option>
+							</select>
+							<span class="text-danger"
+								*ngIf="(addFormControl.category.touched || submitted) && addFormControl.category.errors?.required">
+								Category of project is required
+							</span>
+						</div>
+					</div>
+                </div>
+                
+
+                <div class="d-flex flex-row">
+					<div class="p-2 w-50">
+                        <div class="form-group">
+                            <label>Active Ingeridents
+                                <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Title of your project" formControlName="ingeridents"
+                                minlength="3" />
+                            <span class="text-danger"
+                                *ngIf="(addFormControl.ingeridents.touched || submitted) && addFormControl.ingeridents.errors?.required">
+                                Active Ingeridents is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="addFormControl.ingeridents.touched && addFormControl.ingeridents.errors?.minlength">
+                                Active Ingeridents must be more then 3 character
+                            </span>
+                        </div>
+					</div>
+
+					<div class="p-2 w-50">
+                        <div class="form-group">
+                            <label>Formulation
+                                <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Title of your project" formControlName="formulation"
+                                minlength="3" />
+                            <span class="text-danger"
+                                *ngIf="(addFormControl.formulation.touched || submitted) && addFormControl.formulation.errors?.required">
+                                Formulation is Required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="addFormControl.formulation.touched && addFormControl.formulation.errors?.minlength">
+                                Formulation must be more then 3 character
+                            </span>
+                        </div>
+					</div>
+                </div>
+				<div class="form-group mb-1">
+					<label for="exampleTextarea">Spectrum
+						<span class="text-danger">*</span></label>
+					<textarea class="form-control" id="exampleTextarea" rows="3" formControlName="spectrum"
+						placeholder="Project description must be more than 10 character..."></textarea>
+					<span class="text-danger"
+						*ngIf="(addFormControl.spectrum.touched || submitted) && addFormControl.spectrum.errors?.required">
+						Spectrum of project is required
+					</span>
+					<span class="text-danger"
+						*ngIf="addFormControl.spectrum.touched && addFormControl.spectrum.errors?.minlength">
+						Spectrum must be more then 10 character
+					</span>
+                </div>
+                
+                <div class="form-group mb-1">
+					<label for="exampleTextarea">Pest
+						<span class="text-danger">*</span></label>
+					<textarea class="form-control" id="exampleTextarea" rows="3" formControlName="pest"
+						placeholder="Project description must be more than 10 character..."></textarea>
+					<span class="text-danger"
+						*ngIf="(addFormControl.pest.touched || submitted) && addFormControl.pest.errors?.required">
+						Pest of project is required
+					</span>
+					<span class="text-danger"
+						*ngIf="addFormControl.pest.touched && addFormControl.pest.errors?.minlength">
+						Pest must be more then 10 character
+					</span>
+				</div>
+				<div class="col text-left">
+					<input type="file" #filePicker (change)="onImagePicked($event)" class="m-2">
+					<span class="text-danger"
+						*ngIf="(addFormControl.image.touched || submitted) && addFormControl.image.errors?.required">
+						Image is required
+					</span>
+				</div>
+
+			</div>
+			<div class="card-footer">
+				<button type="submit" class="btn btn-primary mr-2">Submit</button>
+				<button type="reset" class="btn btn-secondary">Cancel</button>
+			</div>
+		</form>
+		<!--end::Form-->
+	</div>
+	<!--end::Card-->
+</div>
+
+
+</div>
+</div>

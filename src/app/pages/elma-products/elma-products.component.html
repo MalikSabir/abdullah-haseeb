@@ -1,0 +1,113 @@
+<!-- adding components work start -->
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-out">
+          <h2>Product</h2>
+          <p>Elma Products</p>
+      </div>
+      <ul class="nav nav-tabs row d-flex">
+        <li class="nav-item col-3" data-aos="zoom-in">
+          <a class="nav-link active show" data-toggle="tab" href="#tab-1" (click)="isSelected(1,'All')">
+            <i class="ri-gps-line"></i>
+            <h4 class="d-none d-lg-block">All Products</h4>
+          </a>
+        </li>
+  
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" (click)="isSelected(2,'Fertilizer')">
+          <a class="nav-link" data-toggle="tab" href="#tab-2">
+            <i class="ri-body-scan-line"></i>
+            <h4 class="d-none d-lg-block">Fertilizer</h4>
+          </a>
+        </li>
+  
+  
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" (click)="isSelected(3,'Fungicide')">
+          <a class="nav-link" data-toggle="tab" href="#tab-3">
+            <i class="ri-body-scan-line"></i>
+            <h4 class="d-none d-lg-block">Fungicide</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200" (click)="isSelected(4,'Granules')">
+          <a class="nav-link" data-toggle="tab" href="#tab-4">
+            <i class="ri-sun-line"></i>
+            <h4 class="d-none d-lg-block">Granules</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3 mt-3" data-aos="zoom-in" data-aos-delay="300" (click)="isSelected(5,'Herbicide')">
+          <a class="nav-link" data-toggle="tab" href="#tab-5">
+            <i class="ri-store-line"></i>
+            <h4 class="d-none d-lg-block">Herbicide</h4>
+          </a>
+        </li>
+  
+        <li class="nav-item col-3 mt-3" data-aos="zoom-in" data-aos-delay="300" (click)="isSelected(6,'Insecticide')">
+          <a class="nav-link" data-toggle="tab" href="#tab-6">
+            <i class="ri-store-line"></i>
+            <h4 class="d-none d-lg-block">Insecticide</h4>
+          </a>
+        </li>
+
+      </ul>
+      </div>
+    </section>
+  <section id="features" class="features">
+      <div class="container">
+          <div class="section-title" data-aos="zoom-out">
+          <h2>Product</h2>
+          <p *ngIf="status===1">All Products</p>
+          <p *ngIf="status===2">Fertilizer</p>
+          <p *ngIf="status===3">Fungicide</p>
+          <p *ngIf="status===4">Granules</p>
+          <p *ngIf="status===5">Herbicide</p>
+          <p *ngIf="status===6">Insecticide</p>
+          </div>
+      </div>
+  </section>
+
+  <div class="container-fluid">
+    <div class="row product">
+      <!-- card one work  -->
+      <div class="col-sm-12 col-lg-5 col-md-5 ml-5 mb-5" *ngFor="let p of products">
+        <div class="card product_bgimg">
+            <div class="d-flex align-items-start">
+                <img src="{{p.imgUrl}}" class="m-3 mr-0 imgStyle" alt="">
+                <div>
+                    <h5 class="m-2">{{p.name}}</h5>
+                    <table class="table table-hover">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Brand Name</th>
+                            <td>{{p.brandName}}</td> 
+                          </tr>
+                          <tr>
+                            <th scope="row">Active Ingeridents</th>
+                            <td>{{p.ingredients}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Formulation</th>
+                            <td>{{p.formulation}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Spectrum</th>
+                            <td>{{p.spectrum}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Pest</th>
+                            <td>{{p.pest}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    <button class="btn btn-danger m-1" (click)="confirmBox(p.product_id, p.imgUrl)" *ngIf="message==='true'">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  
+  
+  
+  
+  

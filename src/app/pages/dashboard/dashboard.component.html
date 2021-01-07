@@ -1,0 +1,39 @@
+<section id="features" class="features">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-out">
+          <h2>Welcome</h2>
+          <p>Admin Dashboard</p>
+      </div>
+      <ul class="nav nav-tabs row d-flex">
+        <li class="nav-item col-3" data-aos="zoom-in" (click)="navAddNew()">
+          <a class="nav-link active show" data-toggle="tab">
+            <i class="ri-gps-line"></i>
+            <h4 class="d-none d-lg-block">Add New Products</h4>
+          </a>
+        </li>
+  
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" (click)="accounts()">
+          <a class="nav-link" data-toggle="tab">
+            <i class="ri-body-scan-line"></i>
+            <h4 class="d-none d-lg-block">Accounts</h4>
+          </a>
+        </li>
+  
+  
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" (click)="Abdullah()">
+          <a class="nav-link" data-toggle="tab">
+            <i class="ri-body-scan-line"></i>
+            <h4 class="d-none d-lg-block">Abdullah Products</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200" (click)="Elma()">
+          <a class="nav-link" data-toggle="tab">
+            <i class="ri-sun-line"></i>
+            <h4 class="d-none d-lg-block">Elma Products</h4>
+          </a>
+        </li>
+        
+      </ul>
+      </div>
+    </section>
+    <router-outlet></router-outlet>

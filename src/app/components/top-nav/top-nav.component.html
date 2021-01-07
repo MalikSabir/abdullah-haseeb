@@ -1,0 +1,32 @@
+
+
+  <header id="header" class="fixed-top d-flex align-items-center  header-transparent col-sm-12">
+    <div class="container d-flex align-items-center">
+      <div class="logo mr-auto">
+        <a href="index.html"><img src="../../../assets//img/abdullah_logo.png" alt="" class="img-fluid logo"></a>
+      </div>
+        <nav class="nav-menu d-lg-block">
+        <ul  *ngIf="message!='true'">
+          <li class="nav-item"><a routerLink="/home" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exect:true}">Home</a></li>
+          <li class="nav-item"><a routerLink="/about" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exect:true}">About</a></li>
+          <li class="nav-item"><a routerLink="/services" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exect:true}">Services</a></li>
+          <li class="nav-item"><a routerLink="/portfolio" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exect:true}">Portfolio</a></li>
+          <li class="nav-item"><a routerLink="/team" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exect:true}">Team</a></li>
+          <li class="nav-item drop-down"><a class="nav-link">Products</a>
+            <ul>
+              <li class="nav-item"><a routerLink="/abdullah-products" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exect:true}">Abdullah Haseeb</a></li>
+              <li class="nav-item"><a routerLink="/elma-products" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exect:true}">Elma Products</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a routerLink="contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exect:true}">Contact</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->     
+    </div>
+
+    <div class="logo mr-auto float-right">
+      <button class="btn btn-success" routerLink="/login" *ngIf="message!='true'">Sign In</button>
+      <button class="btn btn-success" (click)="logout()" *ngIf="message==='true'">Sign Out</button>
+    </div>
+  </header>
+  

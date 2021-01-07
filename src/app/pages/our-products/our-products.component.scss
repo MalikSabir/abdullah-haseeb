@@ -1,0 +1,20 @@
+.product{
+    &_bgimg{
+        background-image: url("../../../assets/img/card-bgcImg.jpg");
+    }
+}
+tr,td,th{
+    padding: 3px;
+}
+th{
+    width: 25%;
+}
+h5{
+    color: #6aaf07; 
+}
+.imgStyle{
+    width: 150px;
+    height: 200px;
+    margin-right: 0px;
+    padding: 0px;
+}

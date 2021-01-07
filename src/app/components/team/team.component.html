@@ -1,0 +1,30 @@
+<!-- ======= Team Section ======= -->
+<app-leadership></app-leadership>
+
+<section id="team" class="team">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-out">
+        <h2>Team</h2>
+        <p>Our Hardworking Team</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" *ngFor="let t of team">
+          <div class="member" data-aos="fade-up">
+            <div class="member-img">
+              <img src="{{t.img}}" class="img-fluid imgStyle" alt="">
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info"> 
+              <h4>{{t.name}}</h4>
+              <span>{{t.designation}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Team Section -->
