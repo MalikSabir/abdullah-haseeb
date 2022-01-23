@@ -13,14 +13,10 @@ export class AccountsComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private apiServices: ApiServicesService) { }
 
   ngOnInit() {
-    console.log(window.location.pathname)
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
     },
-      {
-        // validator: this.customValidator.MatchPassword('password', 'confirmPassword'),
-      }
     );
   }
 
@@ -31,9 +27,7 @@ export class AccountsComponent implements OnInit {
   signup(){
     this.submitted = true;
     if (this.signinForm.valid) {
-      console.log(this.signinForm.value);
       this.apiServices.signup(this.signinForm.value.email, this.signinForm.value.password).subscribe(res=>{
-        console.log(res.res);
       })
     }
   } 

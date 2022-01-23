@@ -36,7 +36,6 @@ export class AddNewProductComponent implements OnInit {
 
 addProductData(){
   this.submitted = true;
-  console.log(this.addProduct.value);
   if (this.addProduct.valid) {
     this.apiservices.addProduct(this.addProduct.value.name,this.addProduct.value.brand_name, this.addProduct.value.company,this.addProduct.value.category, this.addProduct.value.ingeridents,this.addProduct.value.formulation,this.addProduct.value.spectrum,this.addProduct.value.pest,this.addProduct.value.image).subscribe(res=>{
       if(res.status===true){

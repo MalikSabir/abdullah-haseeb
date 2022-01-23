@@ -13,15 +13,10 @@ export class LoginComponent implements OnInit {
   submitted = false;
   constructor(private fb: FormBuilder, private router: Router, private apiServices: ApiServicesService, private authService: AuthService) { }
   ngOnInit() {
-
-    console.log(window.location.pathname)
     this.signinForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-    },
-      {
-        // validator: this.customValidator.MatchPassword('password', 'confirmPassword'),
-      }
+    }
     );
   }
 

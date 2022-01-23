@@ -30,7 +30,6 @@ module.exports.getAllProduct = function (req, res) {
   var sql = "SELECT * FROM products WHERE company = ?";
     connection.query(sql, [req.body.company], function (err, result) {
     if (err) {
-      console.log(err)
     res.status(200).json({
       status: false,
       message: 'Some error with query'
@@ -108,7 +107,6 @@ module.exports.getTeam = function (req, res) {
   var sql = "SELECT * FROM team";
     connection.query(sql, function (err, result) {
     if (err) {
-      console.log(err)
     res.status(200).json({
       status: false,
       message: 'Some error with query'

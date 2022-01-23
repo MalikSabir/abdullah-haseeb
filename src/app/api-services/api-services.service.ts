@@ -19,7 +19,6 @@ export class ApiServicesService {
   private _getTeam = "http://"+this.host+":3000/api/getTeam";
 
  
-  
 
   signup(email: string, password: string){
     return this.http.post<any>(this._signup,{email, password})} 
@@ -51,10 +50,6 @@ export class ApiServicesService {
     return this.http.post<any>(this._addPduct, addProjectData);
   }
   deleteProduct(id: string, imgUrl: string){
-    console.log("yes i am deleting image and id"+id, imgUrl);
     return this.http.post<any>(this._deleteProduct, {id, imgUrl})
   }  
-
-
-
 }

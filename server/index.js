@@ -12,6 +12,7 @@ app.use(bodyparser.json());
 var accountData = require('./controller/accountsData');
 var dashboardData = require('./controller/dashboardData');
 const checkAuth = require("./controller/middleware/check-auth");
+require('dotenv').config();
 
 ///////////////////// Upload image multer function implements here //////////////
 const MIME_TYPE_MAP = {
@@ -35,23 +36,19 @@ const MIME_TYPE_MAP = {
   }
   });
 
-const Port = 3000;
+const Port = process.env.PORT;
 var conn=app.listen(Port,function(){
-    console.log('server is runing on port = '+Port)
+  console.log('my listning port is', Port);
 });
 app.use("/images", express.static(path.join("controller/images")));
-
-// Accounts APIs
 app.post('/api/signin',accountData.signin);
 app.post('/api/signup',accountData.signup);
-app.post('/api/changePassword',checkAuth,accountData.changePassword);
-// // Dashboard APIs
+// app.post('/api/changePassword',checkAuth,accountData.changePassword);
 app.post('/api/getAllProduct',dashboardData.getAllProduct);
 app.post('/api/getProduct',dashboardData.getProduct);
 app.post('/api/addProduct',checkAuth,multer({storage: storage}).single("image"), dashboardData.addProduct);
 app.post('/api/deleteProduct',dashboardData.deleteProduct);
 app.get('/api/getTeam',dashboardData.getTeam);
-
 
 
 module.exports=app;

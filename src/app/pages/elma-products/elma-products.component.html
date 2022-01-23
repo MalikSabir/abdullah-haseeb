@@ -3,7 +3,6 @@
 <section id="features" class="features">
     <div class="container">
       <div class="section-title" data-aos="zoom-out">
-          <h2>Product</h2>
           <p>Elma Products</p>
       </div>
       <ul class="nav nav-tabs row d-flex">
@@ -14,39 +13,42 @@
           </a>
         </li>
   
-        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" (click)="isSelected(2,'Fertilizer')">
-          <a class="nav-link" data-toggle="tab" href="#tab-2">
-            <i class="ri-body-scan-line"></i>
-            <h4 class="d-none d-lg-block">Fertilizer</h4>
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200" (click)="isSelected(6,'Insecticide')">
+          <a class="nav-link" data-toggle="tab" href="#tab-6">
+            <i class="ri-sun-line"></i>
+            <h4 class="d-none d-lg-block">Insecticides</h4>
           </a>
         </li>
-  
-  
-        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" (click)="isSelected(3,'Fungicide')">
-          <a class="nav-link" data-toggle="tab" href="#tab-3">
-            <i class="ri-body-scan-line"></i>
-            <h4 class="d-none d-lg-block">Fungicide</h4>
-          </a>
-        </li>
+
         <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200" (click)="isSelected(4,'Granules')">
           <a class="nav-link" data-toggle="tab" href="#tab-4">
             <i class="ri-sun-line"></i>
-            <h4 class="d-none d-lg-block">Granules</h4>
+            <h4 class="d-none d-lg-block">Granulars</h4>
           </a>
         </li>
-        <li class="nav-item col-3 mt-3" data-aos="zoom-in" data-aos-delay="300" (click)="isSelected(5,'Herbicide')">
-          <a class="nav-link" data-toggle="tab" href="#tab-5">
-            <i class="ri-store-line"></i>
-            <h4 class="d-none d-lg-block">Herbicide</h4>
+
+        <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" (click)="isSelected(3,'Fungicide')">
+          <a class="nav-link" data-toggle="tab" href="#tab-3">
+            <i class="ri-body-scan-line"></i>
+            <h4 class="d-none d-lg-block">Fungicides</h4>
           </a>
         </li>
   
-        <li class="nav-item col-3 mt-3" data-aos="zoom-in" data-aos-delay="300" (click)="isSelected(6,'Insecticide')">
-          <a class="nav-link" data-toggle="tab" href="#tab-6">
+        <li class="nav-item col-3 mt-3" data-aos="zoom-in" data-aos-delay="300" (click)="isSelected(2,'Fertilizer')">
+          <a class="nav-link" data-toggle="tab" href="#tab-2">
             <i class="ri-store-line"></i>
-            <h4 class="d-none d-lg-block">Insecticide</h4>
+            <h4 class="d-none d-lg-block">Fertilizer</h4>
           </a>
         </li>
+        
+        <li class="nav-item col-3 mt-3" data-aos="zoom-in" data-aos-delay="300" (click)="isSelected(5,'Herbicide')">
+          <a class="nav-link" data-toggle="tab" href="#tab-5">
+            <i class="ri-store-line"></i>
+            <h4 class="d-none d-lg-block">Weedicides</h4>
+          </a>
+        </li>
+  
+
 
       </ul>
       </div>
@@ -54,13 +56,12 @@
   <section id="features" class="features">
       <div class="container">
           <div class="section-title" data-aos="zoom-out">
-          <h2>Product</h2>
           <p *ngIf="status===1">All Products</p>
           <p *ngIf="status===2">Fertilizer</p>
           <p *ngIf="status===3">Fungicide</p>
           <p *ngIf="status===4">Granules</p>
-          <p *ngIf="status===5">Herbicide</p>
-          <p *ngIf="status===6">Insecticide</p>
+          <p *ngIf="status===5">Weedicides</p>
+          <p *ngIf="status===6">Insecticides</p>
           </div>
       </div>
   </section>
