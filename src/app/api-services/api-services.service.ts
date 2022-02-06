@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +24,7 @@ export class ApiServicesService {
     return this.http.post<any>(this._signup,{email, password})} 
   signin(email: string, password: string){
     return this.http.post<any>(this._signin,{email, password})} 
-
+ 
     getAllProduct(company: string){
       return this.http.post<any>(this._getAllProduct,{company})
     }
